@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="card m-3">
+        <div class="card-body">
+            <h5 class="card-title text-center">Register Page</h5>
+            <hr>
+            <form [formGroup]='registerForm' class="form p-0">
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Full Name</mat-label>
+                        <input matInput required formControlName='name'>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Mobile Number</mat-label>
+                        <input type="tel" matInput #input maxlength="10" required formControlName='mobile_no'>
+                        <mat-hint align="end">{{input.value?.length || 0}} / 10</mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input type="email" matInput #email required formControlName='email'>
+                        <mat-hint align="end"></mat-hint>
+                    </mat-form-field>
+                </div>
+                <div class="row">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Pincode</mat-label>
+                        <input type="text" matInput required formControlName='pin_code'>
+                    </mat-form-field>
+                </div>
+                <div class="form-group text-right">
+                    <button mat-raised-button color="primary" class="btn btn-success my-3" (click)='onRegister(registerForm.value)'>
+                        Register
+                    </button>
+                </div>
+                <div class="form-group">
+                    <a class="btn" (click)='onLogin()'>Existing User? Login in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

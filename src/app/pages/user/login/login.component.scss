@@ -1,0 +1,26 @@
+.container {
+    .card {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 50%;
+        text-align: center;
+
+        .card-body {
+            .form {
+                margin: 0 auto;
+                padding: 0;
+                .row {
+                    width: 100%;
+                    margin: 0 auto;
+
+    
+                    .mat-form-field {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
