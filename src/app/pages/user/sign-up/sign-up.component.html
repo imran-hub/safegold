@@ -1,44 +1,35 @@
-<div class="container">
-    <div class="card m-3">
-        <div class="card-body">
-            <h5 class="card-title text-center">Register Page</h5>
-            <hr>
-            <form [formGroup]='registerForm' class="form p-0">
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Full Name</mat-label>
-                        <input matInput required formControlName='name'>
-                    </mat-form-field>
-                </div>
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Mobile Number</mat-label>
-                        <input type="tel" matInput #input maxlength="10" required formControlName='mobile_no'>
-                        <mat-hint align="end">{{input.value?.length || 0}} / 10</mat-hint>
-                    </mat-form-field>
-                </div>
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Email</mat-label>
-                        <input type="email" matInput #email required formControlName='email'>
-                        <mat-hint align="end"></mat-hint>
-                    </mat-form-field>
-                </div>
-                <div class="row">
-                    <mat-form-field appearance="outline">
-                        <mat-label>Pincode</mat-label>
-                        <input type="text" matInput required formControlName='pin_code'>
-                    </mat-form-field>
-                </div>
-                <div class="form-group text-right">
-                    <button mat-raised-button color="primary" class="btn btn-success my-3" (click)='onRegister(registerForm.value)'>
-                        Register
-                    </button>
-                </div>
-                <div class="form-group">
-                    <a class="btn" (click)='onLogin()'>Existing User? Login in</a>
-                </div>
-            </form>
-        </div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-lg-12 col-md-12 text-right p-0">
+      <button mat-button (click)='closeDialog()' class="close-button">
+        <mat-icon>close</mat-icon>
+      </button>
     </div>
+  </div>
+  <div class="container text-center">
+    <div class="row my-3">
+      <div class="col-sm-12 col-lg-12 col-md-12 text-center">
+        <h4>SignUp</h4>
+      </div>
+    </div>
+    <form [formGroup]="registerForm" class="form p-0">
+      <formly-form [fields]="fields" [form]="registerForm"></formly-form>
+      <div class="row my-3">
+        <div class="col-sm-12 col-lg-12 col-md-12 text-left">
+          <mat-checkbox color="primary" (change)="isAgreed($event)" class="example-margin">
+            <span>I agree to the <a href="https://www.safegold.com/terms-of-use" target="_blank">Terms and Conditions</a></span>
+          </mat-checkbox>
+        </div>
+      </div>
+      <div class="form-group text-right">
+        <button mat-raised-button color="primary" type="submit" (click)="onRegister($event)"
+                class="btn btn-success my-3">
+          Send OTP
+        </button>
+      </div>
+      <div class="form-group">
+        <a class="btn" (click)='onLogin()'>Existing User? Login Now!</a>
+      </div>
+    </form>
+  </div>
 </div>

@@ -1,15 +1,17 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule, DatePipe} from '@angular/common';
 import {
   MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
   MatCardModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
   MatInputModule,
-  MatFormFieldModule
+  MatMenuModule,
+  MatSnackBarModule,
+  MatToolbarModule
 } from '@angular/material';
-
 
 
 @NgModule({
@@ -22,8 +24,12 @@ import {
     MatIconModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    MatDatepickerModule,
+    MatSnackBarModule
   ],
   providers: [DatePipe]
 })
-export class MaterialModule { }
+export class MaterialModule {
+}
